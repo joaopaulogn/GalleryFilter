@@ -1,32 +1,41 @@
+// Variables for DOM manipulation
 const itens = document.querySelectorAll('.item');
 const images = document.querySelectorAll('.gallery__item');
-const _class = 'active';
+const classActive = 'active'; // That's for manipulate class of active elements
 
-itens[0].classList.add(_class);
-images.forEach(img => img.classList.add(_class));
+// Condition for initiate the event
+if (itens, images) {
+    // Initial states
+    itens[0].classList.add(classActive);
+    images.forEach(img => img.classList.add(classActive));
 
-function handleClick() {
-    const attr = this.getAttribute('data-filter');
-    console.log(attr); 
+    // Function to activate the event
+    function handleClick() {
+        // Get the element attribute
+        const attr = this.getAttribute('data-filter');
 
+        // Remove any active class of the images and add into current element
+        itens.forEach(item => {
+            item.classList.remove(classActive);
+        })
+        this.classList.add(classActive);
+
+        // Loop for validate the filter
+        images.forEach(img => {
+            img.classList.remove(classActive);
+            
+            if (this.dataset.filter === 'all') {
+                img.classList.add(classActive);
+            }
+
+            if (img.classList.contains(attr)) {
+                img.classList.add(classActive);
+            }
+        })
+    }
+
+    // Adding the event in the elements
     itens.forEach(item => {
-        item.classList.remove(_class);
-    })
-    this.classList.add(_class);
-
-    images.forEach(img => {
-        if (this.dataset.filter === 'all') {
-            img.classList.add(_class);
-        } else {
-            img.classList.remove(_class);
-        }
-
-        if (img.classList.contains(attr)) {
-            img.classList.add(_class);
-        }
+        item.addEventListener('click', handleClick);
     })
 }
-
-itens.forEach(item => {
-    item.addEventListener('click', handleClick);
-})
