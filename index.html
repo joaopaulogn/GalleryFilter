@@ -5,14 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="João Paulo Gonçalves Neto">
-    <meta name="description" content="Gallery with filter">
+    <meta name="description" content="Gallery with simple filter">
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
     <title>Galley filter</title>
 </head>
 
 <body>
+    <!-- That's involves the all content of the page -->
     <div class="wrapper">
         <div class="content">
+            <!-- List with all options that will controls the filters -->
             <ul class="list">
                 <li class="item" data-filter="all">All</li>
                 <li class="item" data-filter="camera">Camera</li>
@@ -21,6 +23,7 @@
                 <li class="item" data-filter="shoe">Shoe</li>
             </ul>
 
+            <!-- List with all images that will be shown -->
             <ul class="gallery">
                 <li class="gallery__item camera"><img src="assets/images/camera-1.jpg" alt="Camera 01" class="gallery__img"></li>
                 <li class="gallery__item camera"><img src="assets/images/camera-2.jpg" alt="Camera 02" class="gallery__img"></li>
@@ -34,7 +37,7 @@
         </div>
     </div>
 
-    <script src="assets/js/script.js"></script>
+    <script src="assets/js/script.js" type="text/javascript"></script>
 </body>
 
 </html>
